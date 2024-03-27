@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
-import jobOpening1 from "../../assets/jobOpening1.png";
-import jobOpening2 from "../../assets/jobOpening2.png";
+
 function Sidebar() {
 
   const [leadMenuOpen] = useState(false);
@@ -117,52 +116,52 @@ function Sidebar() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/jobOpening">
-                <i class="bi bi-calendar3"></i>Job Opening
+              <i class="bi bi-search bi bi-people-fill"></i>Job Opening
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/candidates">
-                <i class="bi bi-calendar3"></i>Candidates
+              <i class="bi bi-person-badge"></i>Candidates
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/applications">
-                <i class="bi bi-calendar3"></i>Applications
+              <i class="bi bi-person-badge-fill"></i>Applications
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/interviews">
-                <i class="bi bi-calendar3"></i>Interviews
+              <i class="bi bi-funnel"></i>Interviews
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/assessments">
-                <i class="bi bi-calendar3"></i>Assessments
+              <i class="bi bi-question-square-fill"></i>Assessments
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/clients">
-                <i class="bi bi-calendar3"></i>Clients
+              <i class="bi bi-person-plus-fill"></i>Clients
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/department">
-                <i class="bi bi-calendar3"></i>Department
+              <i class="bi bi-building"></i>Department
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/submissions">
-                <i class="bi bi-calendar3"></i>Submissions
+              <i class="bi bi-card-checklist"></i>Submissions
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/offer">
-                <i class="bi bi-calendar3"></i>Offer
+              <i class="bi bi-journal-text"></i>Offer
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/users">
-                <i class="bi bi-calendar3"></i>Users
+              <i class="bi bi-people-fill"></i>Users
               </NavLink>
             </li>
           </ul>

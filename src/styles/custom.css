@@ -17,7 +17,6 @@
 
 .navbar-vertical.navbar-light .navbar-nav > .nav-item > .nav-link:hover i ,
 .navbar-vertical.navbar-light .navbar-nav > .nav-item > .nav-link.active i{
-  background-color: #57ACC6;
   color: #ffffff;
   cursor: pointer;
 }

@@ -34,6 +34,22 @@ const JopOpening = () => {
       dptName: "Angular",
       status: "Waiting_for_Approval",
     },
+    {
+      id: 4,
+      jobId: "ECS_04_JOB",
+      title: "Product Lead",
+      recruiters: "User04",
+      dptName: "Laravel ",
+      status: "On_Hold",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
   ];
 
   useEffect(() => {
@@ -43,6 +59,7 @@ const JopOpening = () => {
       table.destroy();
     };
   }, []);
+
   return (
     <div className="container-fluid minHeight">
       <div class="card shadow border-0 mb-2 top-header">
@@ -67,7 +84,7 @@ const JopOpening = () => {
       </div>
 
       <div class="card shadow border-0 my-2">
-        <div className="table-responsive">
+        <div className="table-responsive p-2">
           <table
             ref={tableRef}
             className="display table table-hover table-nowrap"
