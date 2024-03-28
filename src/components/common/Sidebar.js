@@ -72,7 +72,7 @@ function Sidebar({ onLogout }) {
       style={{ backgroundColor: "#A5E5E5" }}
       id="navbarVertical"
     >
-      <div className="container-fluid p-1">
+      <div className="container-fluid">
         <button
           className="navbar-toggler mx-2 p-1"
           type="button"
@@ -86,7 +86,7 @@ function Sidebar({ onLogout }) {
         </button>
         <NavLink
           style={{ background: "#A5E5E5" }}
-          className={`navbar-brand logo_ats py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center shadow-lg  ${
+          className={`navbar-brand logo_ats py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center ${
             leadMenuOpen || activeSubmenu ? "active" : ""
           }`}
           to="/"
