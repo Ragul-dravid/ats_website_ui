@@ -50,6 +50,80 @@ const JopOpening = () => {
       dptName: "React Js",
       status: "In_progress",
     },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
+
+    {
+      id: 5,
+      jobId: "ECS_05_JOB",
+      title: "Web Designer",
+      recruiters: "User05",
+      dptName: "React Js",
+      status: "In_progress",
+    },
   ];
 
   useEffect(() => {
@@ -85,10 +159,7 @@ const JopOpening = () => {
 
       <div class="card shadow border-0 my-2">
         <div className="table-responsive p-2">
-          <table
-            ref={tableRef}
-            className="display table table-hover table-nowrap"
-          >
+          <table ref={tableRef} className="display table ">
             <thead className="table-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
@@ -116,7 +187,9 @@ const JopOpening = () => {
                     ) : data.status === "On_Hold" ? (
                       <span className="badge text-bg-warning">On Hold</span>
                     ) : (
-                      <span className="badge text-bg-primary">Waiting for Approval</span>
+                      <span className="badge text-bg-primary">
+                        Waiting for Approval
+                      </span>
                     )}
                   </td>
                   <td>
