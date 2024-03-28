@@ -86,7 +86,7 @@ function Sidebar({ onLogout }) {
         </button>
         <NavLink
           style={{ background: "#A5E5E5" }}
-          className={`navbar-brand logo_ats py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center ${
+          className={`navbar-brand logo_ats py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center shadow-lg  ${
             leadMenuOpen || activeSubmenu ? "active" : ""
           }`}
           to="/"
@@ -96,7 +96,12 @@ function Sidebar({ onLogout }) {
             alt="logo"
             style={{ width: "60px", height: "60px" }}
           />
-          <span className="text-dark fs-1 ms-4">ATS</span>
+          <span
+            className="text-white fs-1 fw-bolder mx-3"
+            style={{ textShadow: "1px 1px 2px black" }}
+          >
+            ATS
+          </span>
         </NavLink>
         <div className="collapse navbar-collapse" id="sidebarCollapse">
           <ul className="navbar-nav">
@@ -163,7 +168,11 @@ function Sidebar({ onLogout }) {
             <button className="nav-link ps-6" to={"#"}>
               <i className="bi bi-person-square"></i> Account
             </button>
-            <button to={"#"} className="nav-link ps-6" onClick={handelLogOutClick}>
+            <button
+              to={"#"}
+              className="nav-link ps-6"
+              onClick={handelLogOutClick}
+            >
               <i className="bi bi-box-arrow-left"></i> Logout
             </button>
           </div>
