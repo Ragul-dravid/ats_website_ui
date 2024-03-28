@@ -105,7 +105,7 @@ function ClientEdit() {
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">Client Owner</lable>
                 <select
-                  class="form-select"
+                  className="form-select"
                   name="clientOwner"
                   {...formik.getFieldProps("clientOwner")}
                 >

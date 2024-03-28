@@ -37,29 +37,29 @@ const Department = () => {
 
   return (
     <div className="container-fluid minHeight">
-    <div class="card shadow border-0 mb-2 top-header">
-        <div class="container-fluid py-4">
-            <div class="row align-items-center justify-content-between ">
-                <div class="col">
-                    <div class="d-flex align-items-center gap-4">
-                        <h1 class="h4 ls-tight headingColor ">Department</h1>
+    <div className="card shadow border-0 mb-2 top-header">
+        <div className="container-fluid py-4">
+            <div className="row align-items-center justify-content-between ">
+                <div className="col">
+                    <div className="d-flex align-items-center gap-4">
+                        <h1 className="h4 ls-tight headingColor ">Department</h1>
                     </div>
                 </div>
-                <div class="col-auto">
-                    <div class="hstack gap-2 justify-content-end">
+                <div className="col-auto">
+                    <div className="hstack gap-2 justify-content-end">
                        <DepartmentAdd/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="card shadow border-0 my-2">
+    <div className="card shadow border-0 my-2">
         <div className="table-responsive p-2">
             <table
                 ref={tableRef}
                 className="display table table-hover table-nowrap"
             >
-                <thead className="table-light">
+                <thead className="thead-light">
                     <tr>
                         <th scope="col" style={{ whiteSpace: "nowrap" }}>
                             S.NO
@@ -67,21 +67,19 @@ const Department = () => {
                         <th scope="col">DEPARTMENT NAME</th>
                         <th scope="col">DEPARTMENT LEAD</th>
                         <th scope="col">PARENT DEPARTMENT</th>
-                        <th scope="col">ACTION</th>
+                        <th scope="col" className="text-center">ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
                     {datas.map((data, index) => (
                         <tr key={index}>
-                            <th scope="row">{index + 1}</th>
+                            <td className="text-center">{index + 1}</td>
                             <td>{data.departmentName}</td>
                             <td>{data.departmentLead}</td>
                             <td>{data.parentDepartment}</td>
-                            <td>
-                                <div className="d-flex">
+                            <td className="text-center">
                                   <DepartmentEdit/>
                                     <DeleteModel />
-                                </div>
                             </td>
                         </tr>
                     ))}
@@ -89,7 +87,7 @@ const Department = () => {
             </table>
         </div>
 
-        <div class="card-footer border-0 py-5"></div>
+        <div className="card-footer border-0 py-5"></div>
     </div>
 </div>
   );

@@ -55,16 +55,16 @@ const Submissions = () => {
 
   return (
     <div className="container-fluid minHeight">
-      <div class="card shadow border-0 mb-2 top-header">
-        <div class="container-fluid py-4">
-          <div class="row align-items-center justify-content-between ">
-            <div class="col">
-              <div class="d-flex align-items-center gap-4">
-                <h1 class="h4 ls-tight headingColor ">Submissions</h1>
+      <div className="card shadow border-0 mb-2 top-header">
+        <div className="container-fluid py-4">
+          <div className="row align-items-center justify-content-between ">
+            <div className="col">
+              <div className="d-flex align-items-center gap-4">
+                <h1 className="h4 ls-tight headingColor ">Submissions</h1>
               </div>
             </div>
-            <div class="col-auto">
-              <div class="hstack gap-2 justify-content-end">
+            <div className="col-auto">
+              <div className="hstack gap-2 justify-content-end">
                 <SubmissionsReview />
               </div>
             </div>
@@ -72,10 +72,10 @@ const Submissions = () => {
         </div>
       </div>
 
-      <div class="card shadow border-0 my-2">
-        <div className="table-responsive p-2" id="Table_Css">
+      <div className="card shadow border-0 my-2">
+        <div className="table-responsive p-2">
           <table ref={tableRef} className="display table ">
-            <thead>
+            <thead className="thead-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                     S.No
@@ -97,10 +97,10 @@ const Submissions = () => {
                   <td>{data.dptName}</td>
                   <td>{data.postingTitle}</td>
                   <td>{data.candidateName}</td>
-                  <td className="d-flex justify-content-center align-items-center">
+                  <td className="text-center">
                     <div>
                       <Link to="/submissions/view">
-                        <button className="btn btn-sm">
+                        <button className="btn btn-sm shadow-none border-none">
                           <FaEye />
                         </button>
                       </Link>
@@ -113,7 +113,7 @@ const Submissions = () => {
           </table>
         </div>
 
-        <div class="card-footer border-0 py-5"></div>
+        <div className="card-footer border-0 py-5"></div>
       </div>
     </div>
   );

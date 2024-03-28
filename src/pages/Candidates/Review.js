@@ -6,9 +6,8 @@ import * as Yup from "yup";
 import { FaStar } from "react-icons/fa6";
 
 function Review() {
-
   const [rating, setRating] = useState(null);
-  const [hover, setHover] = useState()
+  const [hover, setHover] = useState();
 
   const [show, setShow] = useState(false);
 
@@ -20,16 +19,22 @@ function Review() {
   const formik = useFormik({
     initialValues: {
       comments: "",
+      rating: null,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       console.log(values);
+      handleClose(); // Close modal after submission
     },
   });
 
   return (
     <>
-      <button onClick={handleShow} type="button" className="btn btn-sm border-none shadow-none p-0">
+      <button
+        onClick={handleShow}
+        type="button"
+        className="btn btn-sm border-none shadow-none p-0"
+      >
         Review
       </button>
 
@@ -39,28 +44,7 @@ function Review() {
         </Modal.Header>
         <form onSubmit={formik.handleSubmit}>
           <Modal.Body>
-            {/* <div className="row">
-              <div className="col-md-12 col-12">
-                <label className="form-label">Rating</label>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-              <div className="col-md-12 col-12 mb-2">
-                <label className="form-label">Comments</label>
-                <div className="mb-3">
-                  <div className="form-floating">
-                    <textarea
-                      rows="5"
-                      className="form-control"
-                      {...formik.getFieldProps("comments")}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-             <div className="container">
+            <div className="container">
               <div className="col-md-12 col-12 mb-2">Rating: {rating}</div>
               <div className="col-md-12 col-12 mb-2">
                 {[...Array(5)].map((star, index) => {
@@ -72,8 +56,11 @@ function Review() {
                         type="radio"
                         name="rating"
                         value={ratingValue}
-                        onClick={() => setRating(ratingValue)}
-                        style={{visibility:'hidden'}}
+                        onClick={() => {
+                          setRating(ratingValue);
+                          formik.setFieldValue("rating", ratingValue);
+                        }}
+                        style={{ visibility: "hidden" }}
                       />
                       <FaStar
                         className="star"
@@ -91,19 +78,31 @@ function Review() {
                 })}
               </div>
               <div className="col-md-12 col-12 mb-2">
-                <lable className="form-lable">Comments</lable>
+                <label className="form-lable">Comments</label>
                 <div className="mb-3">
-                  <textarea type="text" rows={6} className="form-control " name="comments" {...formik.getFieldProps("comments")}/>
+                  <textarea
+                    type="text"
+                    rows={6}
+                    className="form-control"
+                    name="comments"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.comments}
+                  />
                 </div>
               </div>
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <button className="btn btn-secondary" type="button" onClick={handleClose}>
+            <button
+              className="btn btn-secondary"
+              type="button"
+              onClick={handleClose}
+            >
               Close
             </button>
             <button className="btn btn-primary" type="submit">
-             Submit
+              Submit
             </button>
           </Modal.Footer>
         </form>

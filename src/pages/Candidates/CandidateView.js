@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsFillSendFill } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa6";
 import Review from "./Review";
+import { IoIosSend } from "react-icons/io";
 
 function CandidateView() {
   return (
@@ -44,31 +44,34 @@ function CandidateView() {
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/interview/formal">
+                  <Link className="dropdown-item" to="/interview/formal">
                     Formal Interview
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/interview/record">
+                  <Link className="dropdown-item" to="/interview/record">
                     Record Interview
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/interview/live">
+                  <Link className="dropdown-item" to="/interview/live">
                     Live Interview
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/interview/logan">
+                  <Link className="dropdown-item" to="/interview/logan">
                     Log an Intervieww
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            <button className="btn btn-sm btn-button mx-2 py-0">
-              <BsFillSendFill />
+            <button type="submit" class="btn mx-2 btn-sm btn-button rounded-5" style={{padding:'0',width:'38px',height:'38px'}}>
+              <span>
+                <IoIosSend className="fs-4"/>
+              </span>
             </button>
+
             <div className="dropdown">
               <button
                 className="btn btn-primary dropdown-toggle py-2"
@@ -79,15 +82,11 @@ function CandidateView() {
                 Submit
               </button>
               <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item">
-                    <Review />
-                  </a>
+                <li className="dropdown-item">
+                  <Review />
                 </li>
-                <li>
-                  <a className="dropdown-item" href="/">
-                    Hiring Manager
-                  </a>
+                <li className="dropdown-item">
+                  Hiring Manager
                 </li>
               </ul>
             </div>

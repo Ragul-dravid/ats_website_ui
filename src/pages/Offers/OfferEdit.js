@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Dropdown from "react-bootstrap/Dropdown";
 
 function OfferEdit() {
   const validationSchema = Yup.object({
@@ -63,28 +62,32 @@ function OfferEdit() {
         <div className="card shadow border-0 my-2">
           <div className="row mt-3 me-2">
             <div className="col-12 text-end">
-              <button
-                type="submit"
-                className="btn btn-button"
-                style={{ height: "95%" }}
-              >
-                Update
+              <button type="submit" className="btn btn-button mx-2">
+                Save
               </button>
 
-              <Dropdown className="mx-2">
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+              <div className="dropdown">
+                <button
+                  className="btn btn-primary dropdown-toggle py-2"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Choose Offer Template
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">
-                    Offer of Employment
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Offer of Contract
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/offers/add">
+                      Offer of Employment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/offers/add">
+                      Offer of Contract
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 

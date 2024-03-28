@@ -62,18 +62,18 @@ const Users = () => {
 
   return (
     <div className="container-fluid minHeight">
-      <div class="card shadow border-0 mb-2 top-header">
-        <div class="container-fluid py-4">
-          <div class="row align-items-center justify-content-between ">
-            <div class="col">
-              <div class="d-flex align-items-center gap-4">
-                <h1 class="h4 ls-tight headingColor ">Users</h1>
+      <div className="card shadow border-0 mb-2 top-header">
+        <div className="container-fluid py-4">
+          <div className="row align-items-center justify-content-between ">
+            <div className="col">
+              <div className="d-flex align-items-center gap-4">
+                <h1 className="h4 ls-tight headingColor ">Users</h1>
               </div>
             </div>
-            <div class="col-auto">
-              <div class="hstack gap-2 justify-content-end">
+            <div className="col-auto">
+              <div className="hstack gap-2 justify-content-end">
                 <Link to="/users/add">
-                  <button type="submit" class="btn btn-sm btn-button">
+                  <button type="submit" className="btn btn-sm btn-button">
                     <span>Add New Users</span>
                   </button>
                 </Link>
@@ -83,10 +83,10 @@ const Users = () => {
         </div>
       </div>
 
-      <div class="card shadow border-0 my-2">
-        <div className="table-responsive p-2" id="Table_Css">
+      <div className="card shadow border-0 my-2">
+        <div className="table-responsive p-2">
           <table ref={tableRef} className="display table ">
-            <thead>
+            <thead className="thead-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
@@ -113,12 +113,12 @@ const Users = () => {
                   <td>
                     <div>
                       <Link to="/users/view">
-                        <button className="btn btn-sm ps-0">
+                        <button className="btn btn-sm ps-0 shadow-none border-none">
                           <FaEye />
                         </button>
                       </Link>
                       <Link to="/users/edit">
-                        <button className="btn btn-sm">
+                        <button className="btn btn-sm shadow-none border-none">
                           <FaEdit />
                         </button>
                       </Link>
@@ -131,7 +131,7 @@ const Users = () => {
           </table>
         </div>
 
-        <div class="card-footer border-0 py-5"></div>
+        <div className="card-footer border-0 py-5"></div>
       </div>
     </div>
   );

@@ -5,20 +5,20 @@ import { RxDragHandleDots2 } from "react-icons/rx";
 
 function JopOpeningView() {
   return (
-    <div class="container-fluid minHeight">
-      <div class="card shadow border-0 mb-2 top-header">
-        <div class="container-fluid py-4">
-          <div class="row align-items-center">
-            <div class="row align-items-center">
-              <div class="col">
-                <div class="d-flex align-items-center gap-4">
-                  <h1 class="h4 ls-tight headingColor">Assessment</h1>
+    <div className="container-fluid minHeight">
+      <div className="card shadow border-0 mb-2 top-header">
+        <div className="container-fluid py-4">
+          <div className="row align-items-center">
+            <div className="row align-items-center">
+              <div className="col">
+                <div className="d-flex align-items-center gap-4">
+                  <h1 className="h4 ls-tight headingColor">Assessment</h1>
                 </div>
               </div>
-              <div class="col-auto">
-                <div class="hstack gap-2 justify-content-start">
+              <div className="col-auto">
+                <div className="hstack gap-2 justify-content-start">
                   <Link to="/assessment">
-                    <button type="submit" class="btn btn-sm btn-light">
+                    <button type="submit" className="btn btn-sm btn-light">
                       <span>Back</span>
                     </button>
                   </Link>
@@ -28,7 +28,7 @@ function JopOpeningView() {
           </div>
         </div>
       </div>
-      <div class="card shadow border-0 mb-2">
+      <div className="card shadow border-0 mb-2">
         {/* Candidate Assessment */}
         <div className="container-fluid fw-bold fs-5 my-2">
           Candidate Assessment

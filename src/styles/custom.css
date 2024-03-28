@@ -207,7 +207,7 @@
 /* Table Css */
 
 #Table_Css table thead{
-  background: #e7eaf0;
+  background: #e4e6eb;
 
 }
 #Table_Css table thead tr th{
@@ -246,7 +246,19 @@ div.dt-container select.dt-input{
   padding: 3px;
 }
 
+@media (min-width: 992px) {
+.logo_ats{
+ position:sticky !important;
+  top: 0;
+  z-index: 20;
+  background: "#A5E5E5" !important;
+  }
+}
 
 .sortdown::after {
   display: none;
+}
+
+.logutBtn :hover{
+  color: #ffffff !important;
 }

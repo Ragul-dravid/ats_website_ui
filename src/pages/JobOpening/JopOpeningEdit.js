@@ -137,7 +137,7 @@ function JopOpeningEdit() {
               </div>
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">Job Type</lable>
-                <select class="form-select" name="jobType" {...formik.getFieldProps("jobType")}>
+                <select className="form-select" name="jobType" {...formik.getFieldProps("jobType")}>
                   <option selected>None</option>
                   <option value="Full Time">Full Time</option>
                   <option value="Part Time">Part Time</option>
@@ -147,7 +147,7 @@ function JopOpeningEdit() {
               </div>
               <div className="col-md-6 col-12 mb-3">
                 <lable className="form-lable">Title</lable>
-                <select class="form-select " name="title" {...formik.getFieldProps("title")}>
+                <select className="form-select " name="title" {...formik.getFieldProps("title")}>
                   <option selected>None</option>
                   <option value="Developer">Developer</option>
                   <option value="Product Lead">Product Lead</option>
@@ -239,7 +239,7 @@ function JopOpeningEdit() {
               </div>
               <div className="col-md-6 col-12 mb-3">
                 <lable className="form-lable">Job Opening Status</lable>
-                <select class="form-select " name="jobOpeningStatus" {...formik.getFieldProps("jobOpeningStatus")}>
+                <select className="form-select " name="jobOpeningStatus" {...formik.getFieldProps("jobOpeningStatus")}>
                   <option selected>None</option>
                   <option value="In Progress">In Progress</option>
                   <option value="On Hold">On Hold</option>
@@ -250,7 +250,7 @@ function JopOpeningEdit() {
               </div>
               <div className="col-md-6 col-12 mb-3">
                 <lable className="form-lable">Industry</lable>
-                <select class="form-select " name="industry" {...formik.getFieldProps("industry")}>
+                <select className="form-select " name="industry" {...formik.getFieldProps("industry")}>
                   <option selected>None</option>
                   <option value="IT Services">IT Services</option>
                   <option value="Education">Education</option>

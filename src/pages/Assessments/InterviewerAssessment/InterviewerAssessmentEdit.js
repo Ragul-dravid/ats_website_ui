@@ -97,17 +97,17 @@ function InterviewerAssessmentEdit() {
                                     Rating Type
                                 </lable>
                                 <div className='mt-2'>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="ratingType" value="Thumb Rating"
+                                <div className="form-check form-check-inline">
+                                    <input className="form-check-input" type="radio" name="ratingType" value="Thumb Rating"
                                     onChange={formik.handleChange} 
                                     checked={formik.values.ratingType === "Thumb Rating"}/>
-                                    <label class="form-check-label"><FaRegThumbsUp className='mb-1' color="#1673FF" /> Thumb Rating</label>
+                                    <label className="form-check-label"><FaRegThumbsUp className='mb-1' color="#1673FF" /> Thumb Rating</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input mx-2" type="radio" name="ratingType" value="Star Rating" 
+                                <div className="form-check form-check-inline">
+                                    <input className="form-check-input mx-2" type="radio" name="ratingType" value="Star Rating" 
                                      onChange={formik.handleChange}
                                      checked={formik.values.ratingType === "Star Rating"}/>
-                                    <label class="form-check-label"><FaStar className='text-warning mb-1' /> Star Rating</label>
+                                    <label className="form-check-label"><FaStar className='text-warning mb-1' /> Star Rating</label>
                                 </div>
                                 </div>
                             </div>

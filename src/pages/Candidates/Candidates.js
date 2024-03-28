@@ -15,7 +15,7 @@ const Candidates = () => {
     {
       id: 1,
       candidateName: "Ragul",
-      city: "Chennai",
+      city: "Chennai  ",
       candidateStage: "Fresher",
       modifiedTime: "08:00",
       rating: "4.0",
@@ -23,7 +23,7 @@ const Candidates = () => {
     {
       id: 2,
       candidateName: "Anthony",
-      city: "Chennai",
+      city: "Chennai  ",
       candidateStage: "Fresher",
       modifiedTime: "08:00",
       rating: "3.5",
@@ -64,7 +64,7 @@ const Candidates = () => {
       <div className="card shadow border-0 my-2">
         <div className="table-responsive p-2">
           <table ref={tableRef} className="display table ">
-            <thead className="table-light">
+            <thead className="thead-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
@@ -75,7 +75,7 @@ const Candidates = () => {
                 <th scope="col">CITY</th>
                 <th scope="col">CANDIDATE STAGE</th>
                 <th scope="col">MODIFIED TIME</th>
-                <th scope="col">RATING</th>
+                <th className="text-start" scope="col">RATING</th>
                 <th scope="col" className="text-center">
                   ACTION
                 </th>
@@ -89,17 +89,17 @@ const Candidates = () => {
                   <td >{data.city}</td>
                   <td >{data.candidateStage}</td>
                   <td >{data.modifiedTime}</td>
-                  <td className="text-center">{data.rating}<FaStar className="text-warning mb-1"/></td>
+                  <td className="text-start">{data.rating}<FaStar className="text-warning mb-1"/></td>
                   <td>
                     <div className="d-flex justify-content-around align-items-center">
                       <JobAssociate/>
                       <Link to="/candidates/view">
-                        <button className="btn btn-sm">
+                        <button className="btn btn-sm shadow-none border-none">
                           <FaEye />
                         </button>
                       </Link>
                       <Link to="/candidates/edit">
-                        <button className="btn btn-sm">
+                        <button className="btn btn-sm shadow-none border-none">
                           <FaEdit />
                         </button>
                       </Link>

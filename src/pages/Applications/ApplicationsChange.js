@@ -29,7 +29,7 @@ function ApplicationsChange() {
     return (
         <>
             <button
-                className="btn btn-sm"
+                className="btn btn-sm shadow-none border-none"
                 onClick={handleShow}
             >
                 <VscGitPullRequestGoToChanges />
@@ -48,9 +48,9 @@ function ApplicationsChange() {
                 <form onSubmit={formik.handleSubmit}>
                     <Modal.Body>
                         <div className="row">
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Select Application Status<span class="text-danger">*</span></lable>
-                                <div class="mb-3">
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">Select Application Status<span className="text-danger">*</span></lable>
+                                <div className="mb-3">
                                     <select
                                         type="text"
                                         className={`form-select  ${formik.touched.applicationStatus && formik.errors.applicationStatus
@@ -71,9 +71,9 @@ function ApplicationsChange() {
                                         )}
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable class="form-lable">
-                                    Job Openings<span class="text-danger">*</span>
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">
+                                    Job Openings<span className="text-danger">*</span>
                                 </lable>
                                 <select className={`form-select  ${formik.touched.jobOpenings && formik.errors.jobOpenings
                                         ? "is-invalid"
@@ -97,10 +97,10 @@ function ApplicationsChange() {
                                         </div>
                                     )}
                             </div>
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Comments<span class="text-danger">*</span></lable>
-                                <div class="mb-3">
-                                    <textarea id="exampleFormControlTextarea1" rows="3" class={`form-control form-control-sm ${formik.touched.comments && formik.errors.comments
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">Comments<span className="text-danger">*</span></lable>
+                                <div className="mb-3">
+                                    <textarea id="exampleFormControlTextarea1" rows="3" className={`form-control form-control-sm ${formik.touched.comments && formik.errors.comments
                                             ? "is-invalid"
                                             : ""
                                         }`}

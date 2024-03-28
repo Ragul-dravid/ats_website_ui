@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 
-function Sidebar() {
-
+function Sidebar({ onLogout }) {
+  const handelLogOutClick = () => {
+    onLogout();
+  };
   const [leadMenuOpen] = useState(false);
   // const [reportMenuOpen, setReportMenuOpen] = useState(false);
   // const [studentMenuOpen, setStudentMenuOpen] = useState(false);
@@ -70,16 +72,9 @@ function Sidebar() {
       style={{ backgroundColor: "#A5E5E5" }}
       id="navbarVertical"
     >
-      <div className="container-fluid">
-        <NavLink
-        style={{position:'sticky', top:'0',zIndex:'20',backgroundColor: "#A5E5E5"}}
-          className={`navbar-brand shadow-lg  py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center ${
-            leadMenuOpen || activeSubmenu ? "active" : ""
-          }`}
-          to="/"
-        >
-           <button
-          className="navbar-toggler mx-2"
+      <div className="container-fluid p-1">
+        <button
+          className="navbar-toggler mx-2 p-1"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#sidebarCollapse"
@@ -89,6 +84,13 @@ function Sidebar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <NavLink
+          style={{ background: "#A5E5E5" }}
+          className={`navbar-brand logo_ats py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center ${
+            leadMenuOpen || activeSubmenu ? "active" : ""
+          }`}
+          to="/"
+        >
           <img
             src={Logo}
             alt="logo"
@@ -96,92 +98,87 @@ function Sidebar() {
           />
           <span className="text-dark fs-1 ms-4">ATS</span>
         </NavLink>
-        {/* <div className="navbar-user d-lg-none">
-          ... user dropdown ...
-        </div> */}
         <div className="collapse navbar-collapse" id="sidebarCollapse">
           <ul className="navbar-nav">
-            {/* <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                to="/dashboard"
-                
-              >
-                <i className="bi bi-house"></i> Dashboard
-              </NavLink>
-            </li> */}
             <li className="nav-item">
-              <NavLink className="nav-link" to="/center">
-                <i class="bi bi-house-door"></i>Home
+              <NavLink className="nav-link" to="/dashboard">
+                <i className="bi bi-bar-chart"></i>Dashboard
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/jobOpening">
-              <i class="bi bi-search bi bi-people-fill"></i>Job Opening
+                <i className="bi bi-search bi bi-people-fill"></i>Job Opening
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/candidates">
-              <i class="bi bi-person-badge"></i>Candidates
+                <i className="bi bi-person-badge"></i>Candidates
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/applications">
-              <i class="bi bi-person-badge-fill"></i>Applications
+                <i className="bi bi-person-badge-fill"></i>Applications
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/interviews">
-              <i class="bi bi-funnel"></i>Interviews
+              <NavLink className="nav-link" to="/interview">
+                <i className="bi bi-funnel"></i>Interviews
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/assessments">
-              <i class="bi bi-question-square-fill"></i>Assessments
+              <NavLink className="nav-link" to="/assessment">
+                <i className="bi bi-question-square-fill"></i>Assessments
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/clients">
-              <i class="bi bi-person-plus-fill"></i>Clients
+                <i className="bi bi-person-plus-fill"></i>Clients
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/department">
-              <i class="bi bi-building"></i>Department
+                <i className="bi bi-building"></i>Department
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/submissions">
-              <i class="bi bi-card-checklist"></i>Submissions
+                <i className="bi bi-card-checklist"></i>Submissions
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/offer">
-              <i class="bi bi-journal-text"></i>Offer
+                <i className="bi bi-journal-text"></i>Offer
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/users">
-              <i class="bi bi-people-fill"></i>Users
+                <i className="bi bi-people-fill"></i>Users
               </NavLink>
             </li>
           </ul>
 
           <hr className="navbar-divider my-5 opacity-20" />
 
-          <div className="mt-auto"></div>
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/account">
+          <div className="mt-auto logutBtn">
+            <button className="nav-link ps-6" to={"#"}>
+              <i className="bi bi-person-square"></i> Account
+            </button>
+            <button to={"#"} className="nav-link ps-6" onClick={handelLogOutClick}>
+              <i className="bi bi-box-arrow-left"></i> Logout
+            </button>
+          </div>
+          {/* <ul className="navbar-nav">
+            <li className="nav-item text-start">
+              <button className="nav-link" to={"#"}>
                 <i className="bi bi-person-square"></i> Account
-              </NavLink>
+              </button>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/logout">
+              <button to={"#"} className="nav-link" onClick={handelLogOutClick}>
                 <i className="bi bi-box-arrow-left"></i> Logout
-              </NavLink>
+              </button>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </nav>

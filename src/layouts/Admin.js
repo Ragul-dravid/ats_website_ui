@@ -4,10 +4,7 @@ import Home from "../pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Footer from "../components/common/Footer";
-import Center from "../pages/Center/Center";
-import CenterAdd from "../pages/Center/CenterAdd";
-import CenterEdit from "../pages/Center/CenterEdit";
-import CenterView from "../pages/Center/CenterView";
+
 import JopOpening from "../pages/JobOpening/JopOpening";
 import JopOpeningAdd from "../pages/JobOpening/JopOpeningAdd";
 import JopOpeningEdit from "../pages/JobOpening/JopOpeningEdit";
@@ -16,14 +13,10 @@ import Users from "../pages/Users/Users";
 import UsersAdd from "../pages/Users/UsersAdd";
 import UsersEdit from "../pages/Users/UsersEdit";
 import UsersView from "../pages/Users/UsersView";
-import Submissions from "../pages/Submission/submissions";
+import Submissions from "../pages/Submission/Submissions";
 import SubmissionsReview from "../pages/Submission/SubmissionsReview";
 import SubmissionsView from "../pages/Submission/SubmissionsView";
 
-import Clients from "../pages/clients/Clients";
-import ClientsAdd from "../pages/clients/ClientsAdd";
-import ClientsEdit from "../pages/clients/ClientsEdit";
-import ClientsView from "../pages/clients/ClientsView";
 import Offers from "../pages/Offers/Offers";
 import OffersAdd from "../pages/Offers/OfferAdd";
 import OffersEdit from "../pages/Offers/OfferEdit";
@@ -55,23 +48,20 @@ import FormalInterview from "../pages/Interview/FormalInterview";
 import RecordInterview from "../pages/Interview/RecordInterview";
 import LiveInterview from "../pages/Interview/LiveInterview";
 import LogAnInterview from "../pages/Interview/LogAnInterview";
-function Admin() {
+import Clients from "../pages/clients/Clients";
+import ClientAdd from "../pages/clients/ClientsAdd";
+import ClientEdit from "../pages/clients/ClientsEdit";
+import ClientView from "../pages/clients/ClientsView";
+function Admin({ handleLogout }) {
   return (
     <BrowserRouter>
       <div className="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
-        <Sidebar />
+        <Sidebar onLogout={handleLogout}/>
         <div className="h-screen flex-grow-1 overflow-y-lg-auto">
-          {/* <Header /> */}
           <main className="py-6 bg-surface-secondary">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/dashboard" element={<Dashboard />} />
-
-              {/* {/ Center  /} */}
-              <Route path="/center" element={<Center />} />
-              <Route path="/center/add" element={<CenterAdd />} />
-              <Route path="/center/edit" element={<CenterEdit />} />
-              <Route path="/center/view" element={<CenterView />} />
 
               {/* Job Opening */}
               <Route path="/jobOpening" element={<JopOpening />} />
@@ -81,9 +71,9 @@ function Admin() {
 
               {/* {/ Clients /} */}
               <Route path="/clients" element={<Clients />} />
-              <Route path="/clients/add" element={<ClientsAdd />} />
-              <Route path="/clients/edit" element={<ClientsEdit />} />
-              <Route path="/clients/view" element={<ClientsView />} />
+              <Route path="/clients/add" element={<ClientAdd />} />
+              <Route path="/clients/edit" element={<ClientEdit />} />
+              <Route path="/clients/view" element={<ClientView />} />
 
               {/* {/ Offers /} */}
               <Route path="/offer" element={<Offers />} />

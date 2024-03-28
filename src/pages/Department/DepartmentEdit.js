@@ -30,7 +30,7 @@ function DepartmentEdit() {
         <>
             <button
                 type="submit"
-                class="btn btn-sm ps-0"
+                className="btn btn-sm ps-0 shadow-none border-none"
                 onClick={handleShow}
             >
             <FaEdit />
@@ -49,9 +49,9 @@ function DepartmentEdit() {
                 <form onSubmit={formik.handleSubmit}>
                     <Modal.Body>
                         <div className="row">
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Department Name<span class="text-danger">*</span></lable>
-                                <div class="mb-3">
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">Department Name<span className="text-danger">*</span></lable>
+                                <div className="mb-3">
                                     <input
                                         type="text"
                                         className={`form-control  ${formik.touched.departmentName && formik.errors.departmentName
@@ -68,9 +68,9 @@ function DepartmentEdit() {
                                         )}
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Department Lead<span class="text-danger">*</span></lable>
-                                <div class="mb-3">
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">Department Lead<span className="text-danger">*</span></lable>
+                                <div className="mb-3">
                                     <input
                                         type="text"
                                         className={`form-control  ${formik.touched.departmentLead && formik.errors.departmentLead
@@ -87,9 +87,9 @@ function DepartmentEdit() {
                                         )}
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Parent Department<span class="text-danger">*</span></lable>
-                                <div class="mb-3">
+                            <div className="col-md-6 col-12 mb-2">
+                                <lable className="form-lable">Parent Department<span className="text-danger">*</span></lable>
+                                <div className="mb-3">
                                     <input
                                         type="text"
                                         className={`form-control  ${formik.touched.parentDepartment && formik.errors.parentDepartment

@@ -13,10 +13,26 @@ const Interview = () => {
     {
       id: 1,
       interviewName: "ECS_01_JOB",
-      candidateName: "Azhar Test786",
+      candidateName: "Ragul",
       departmentName: "React Js",
       postingTitle: "React Developer",
       interviewStatus: "In_progress",
+    },
+    {
+      id: 2,
+      interviewName: "ECS_02_JOB",
+      candidateName: "Chandru",
+      departmentName: "Laravel",
+      postingTitle: "Front End Developer",
+      interviewStatus: "On_Hold",
+    },
+    {
+      id: 3,
+      interviewName: "ECS_03_JOB",
+      candidateName: "Surya",
+      departmentName: "Angular",
+      postingTitle: "Angular Developer",
+      interviewStatus: "",
     },
   ];
 
@@ -51,24 +67,24 @@ const Interview = () => {
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="/interview/formal">
+                      <Link className="dropdown-item" to="/interview/formal">
                         Formal Interview
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/interview/record">
+                      <Link className="dropdown-item" to="/interview/record">
                         Record Interview
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/interview/live">
+                      <Link className="dropdown-item" to="/interview/live">
                         Live Interview
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/interview/logan">
-                        Logan Interview
-                      </a>
+                      <Link className="dropdown-item" to="/interview/logan">
+                        Log an Intervieww
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -81,7 +97,7 @@ const Interview = () => {
       <div className="card shadow border-0 my-2">
         <div className="table-responsive p-2">
           <table ref={tableRef} className="display table ">
-            <thead className="table-light">
+            <thead className="thead-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
@@ -91,7 +107,9 @@ const Interview = () => {
                 <th scope="col">DEPARTMENT NAME</th>
                 <th scope="col">POSTING TITLE</th>
                 <th scope="col">INTERVIEW STATUS</th>
-                <th scope="col" className="text-center">ACTION</th>
+                <th scope="col" className="text-center">
+                  ACTION
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -117,7 +135,7 @@ const Interview = () => {
                   <td>
                     <div className="d-flex">
                       <Link to="/interview/view">
-                        <button className="btn btn-sm">
+                        <button className="btn btn-sm shadow-none border-none">
                           <FaEye />
                         </button>
                       </Link>

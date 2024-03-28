@@ -31,7 +31,7 @@ function Example() {
 
   return (
     <>
-      <button onClick={handleShow} type="button" className="btn btn-sm">
+      <button onClick={handleShow} type="button" className="btn btn-sm shadow-none border-none">
         <RiFolderSettingsFill />
       </button>
 
