@@ -202,3 +202,51 @@
   top: 0;
   z-index: 10;
 }
+
+
+/* Table Css */
+
+#Table_Css table thead{
+  background: #e7eaf0;
+
+}
+#Table_Css table thead tr th{
+  outline: none !important;
+  font-size: 11px !important;
+}
+
+#Table_Css table tbody tr{
+  background-color: #ffffff !important;
+}
+#Table_Css table tbody tr td{
+  background: #ffffff !important;
+  padding: 20px 10px !important;
+}
+
+/* Filter Search input */
+div.dt-container .dt-search input{
+  outline: none !important;
+}
+
+
+
+/* Buttons in Page */
+
+div.dt-container .dt-paging .dt-paging-button{
+  padding: 0px !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button :hover{
+  padding: 2px !important;
+}
+
+/* entries per page */
+div.dt-container select.dt-input{
+  margin-right: 10px;
+  padding: 3px;
+}
+
+
+.sortdown::after {
+  display: none;
+}

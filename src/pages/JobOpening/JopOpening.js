@@ -148,7 +148,7 @@ const JopOpening = () => {
               <div class="hstack gap-2 justify-content-end">
                 <Link to="/jobOpening/add">
                   <button type="submit" class="btn btn-sm btn-button">
-                    <span>Creat Job Opening</span>
+                    <span>Create Job Opening</span>
                   </button>
                 </Link>
               </div>
@@ -158,9 +158,9 @@ const JopOpening = () => {
       </div>
 
       <div class="card shadow border-0 my-2">
-        <div className="table-responsive p-2">
-          <table ref={tableRef} className="display table ">
-            <thead className="table-light">
+        <div className="table-responsive p-2" id="Table_Css">
+          <table ref={tableRef} className="display table">
+            <thead>
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
@@ -170,13 +170,13 @@ const JopOpening = () => {
                 <th scope="col">RECRUITERS</th>
                 <th scope="col">DEPARTMENT NAME</th>
                 <th scope="col">STATUS</th>
-                <th scope="col">ACTION</th>
+                <th scope="col" className="text-center">ACTION</th>
               </tr>
             </thead>
             <tbody>
               {datas.map((data, index) => (
                 <tr key={index}>
-                  <th scope="row">{index + 1}</th>
+                  <td className="text-center">{index + 1}</td>
                   <td>{data.jobId}</td>
                   <td>{data.title}</td>
                   <td>{data.recruiters}</td>
@@ -193,7 +193,7 @@ const JopOpening = () => {
                     )}
                   </td>
                   <td>
-                    <div className="d-flex">
+                    <div>
                       <Link to="/jobOpening/view">
                         <button className="btn btn-sm ps-0">
                           <FaEye />

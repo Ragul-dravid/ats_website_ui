@@ -3,15 +3,15 @@ import React from "react";
 function Home() {
   return (
     <div class="container-fluid">
-    <div class="card shadow border-0 mb-5 products">
+    <div class="card shadow border-0 mb-5 top-header">
       <div class="container-fluid py-4">
         <div class="row align-items-center">
-          <div class="col">
-            <div class="d-flex align-items-center gap-4">
-              <h1 class="h4 ls-tight">Add new Product</h1>
+          <div class="col-12">
+            <div className="text-center">
+              <h1 class="fs-3 text-uppercase" style={{letterSpacing:'2px',wordSpacing:'5px'}}>Applicant Tracking System</h1>
             </div>
           </div>
-          <div class="col-auto">
+          {/* <div class="col-auto">
             <div class="hstack gap-2 justify-content-end">
               <a href="{{ url('/product') }}">
                 <button
@@ -25,7 +25,7 @@ function Home() {
                 <span>Save</span>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

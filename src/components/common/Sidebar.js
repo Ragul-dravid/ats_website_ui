@@ -66,13 +66,20 @@ function Sidebar() {
 
   return (
     <nav
-      className="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light border-bottom border-bottom-lg-0 border-end-lg"
+      className="navbar show navbar-vertical h-lg-screen navbar-expand-lg p-0 navbar-light border-bottom border-bottom-lg-0 border-end-lg"
       style={{ backgroundColor: "#A5E5E5" }}
       id="navbarVertical"
     >
       <div className="container-fluid">
-        <button
-          className="navbar-toggler ms-n2"
+        <NavLink
+        style={{position:'sticky', top:'0',zIndex:'20',backgroundColor: "#A5E5E5"}}
+          className={`navbar-brand shadow-lg  py-lg-2 px-lg-6 m-0 d-flex align-items-center justify-content-center ${
+            leadMenuOpen || activeSubmenu ? "active" : ""
+          }`}
+          to="/"
+        >
+           <button
+          className="navbar-toggler mx-2"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#sidebarCollapse"
@@ -82,12 +89,6 @@ function Sidebar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <NavLink
-          className={`navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0 d-flex align-items-center justify-content-center ${
-            leadMenuOpen || activeSubmenu ? "active" : ""
-          }`}
-          to="/"
-        >
           <img
             src={Logo}
             alt="logo"
@@ -95,9 +96,9 @@ function Sidebar() {
           />
           <span className="text-dark fs-1 ms-4">ATS</span>
         </NavLink>
-        <div className="navbar-user d-lg-none">
-          {/* ... user dropdown ... */}
-        </div>
+        {/* <div className="navbar-user d-lg-none">
+          ... user dropdown ...
+        </div> */}
         <div className="collapse navbar-collapse" id="sidebarCollapse">
           <ul className="navbar-nav">
             {/* <li className="nav-item">
