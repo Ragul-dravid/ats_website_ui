@@ -21,7 +21,7 @@ function InterviewerAssessmentAdd() {
         },
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            console.log("Job Opening Datas:", values);
+            console.log("Interviewer Assessment Datas:", values);
         },
     });
 
