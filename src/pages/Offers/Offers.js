@@ -67,7 +67,7 @@ const Offers = () => {
             </div>
             <div className="col-auto">
               <div className="hstack gap-2 justify-content-end">
-                <Link to="/offers/add">
+                <Link to="/offer/add">
                   <button type="submit" className="btn btn-sm btn-button">
                     <span>Create Offers</span>
                   </button>
@@ -79,12 +79,12 @@ const Offers = () => {
       </div>
 
       <div className="card shadow border-0 my-2">
-        <div className="table-responsive p-2">
+        <div className="table-responsive p-2 minHeight" >
           <table
             ref={tableRef}
             className="display table table-hover table-nowrap"
           >
-            <thead className="table-light">
+            <thead className="thead-light">
               <tr>
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
@@ -105,12 +105,12 @@ const Offers = () => {
                   <td>{data.postingTitle}</td>
                   <td>{data.dptName}</td>
                   <td className="text-center">
-                    <Link to="/offers/view">
+                    <Link to="/offer/view">
                       <button className="btn btn-sm ps-0 shadow-none border-none">
                         <FaEye />
                       </button>
                     </Link>
-                    <Link to="/offers/edit">
+                    <Link to="/offer/edit">
                       <button className="btn btn-sm shadow-none border-none">
                         <FaEdit />
                       </button>

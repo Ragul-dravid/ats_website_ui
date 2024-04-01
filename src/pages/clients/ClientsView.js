@@ -26,7 +26,7 @@ function ClientView() {
           </div>
         </div>
       </div>
-      <div className="card shadow border-0 mb-2">
+      <div className="card shadow border-0 mb-2 minHeight">
         {/* 
         client Information */}
         <div className="container-fluid fw-bold fs-5 my-2">

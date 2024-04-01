@@ -26,7 +26,7 @@ function UsersView() {
           </div>
         </div>
       </div>
-      <div className="card shadow border-0 mb-2">
+      <div className="card shadow border-0 mb-2 minHeight">
         {/* Users Information */}
         <div className="container-fluid fw-bold fs-5 my-2">
           Users Information

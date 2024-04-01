@@ -22,7 +22,7 @@ function OfferEdit() {
   const formik = useFormik({
     initialValues: {
       postingTitle: "React Js",
-      departmentName: "Laravel",
+      departmentName: "Angular",
       candidateName: "Ragul",
       compensationAmount: "$",
       employeeType: "Permanent",
@@ -63,31 +63,11 @@ function OfferEdit() {
           <div className="row mt-3 me-2">
             <div className="col-12 text-end">
               <button type="submit" className="btn btn-button mx-2">
-                Save
+                Save & Send
               </button>
-
-              <div className="dropdown">
-                <button
-                  className="btn btn-primary dropdown-toggle py-2"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Choose Offer Template
-                </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/offers/add">
-                      Offer of Employment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="/offers/add">
-                      Offer of Contract
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              <button type="submit" className="btn btn-button mx-2">
+                Update
+              </button>
             </div>
           </div>
 
@@ -135,7 +115,10 @@ function OfferEdit() {
                   }`}
                 >
                   <option selected></option>
-                  <option value="ECS Cloud">ECS Cloud</option>
+                  <option value="React Js">React Js</option>
+                  <option value="Angular">Angular</option>
+                  <option value="Java">Java</option>
+                  <option value="Python">Python</option>
                 </select>
                 {formik.touched.departmentName &&
                   formik.errors.departmentName && (
@@ -169,6 +152,25 @@ function OfferEdit() {
                       {formik.errors.candidateName}
                     </div>
                   )}
+              </div>
+              <div className="col-md-6 col-12 mb-2">
+                <lable className="form-lable">Choose Offer Template</lable>
+                <select
+                  name="chooseOfferTemplate"
+                  {...formik.getFieldProps("chooseOfferTemplate")}
+                  className={`form-select ${
+                    formik.touched.chooseOfferTemplate &&
+                    formik.errors.chooseOfferTemplate
+                      ? "is-invalid"
+                      : ""
+                  }`}
+                >
+                  <option selected></option>
+                  <option value="Offer of Employment">
+                    Offer of Employment
+                  </option>
+                  <option value="Offer of Contract">Offer of Contract</option>
+                </select>
               </div>
             </div>
           </div>

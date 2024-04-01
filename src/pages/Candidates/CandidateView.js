@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
 import Review from "./Review";
-import { IoIosSend } from "react-icons/io";
+import SendEmail from "../Templates/SendEmail";
+import SendEmailHiringManager from "../Templates/SendEmailHiringManager";
 
 function CandidateView() {
   return (
@@ -33,7 +34,17 @@ function CandidateView() {
         <div className="d-flex justify-content-between p-3">
           <div className="container-fluid fw-bold fs-5 my-2">Basic Info</div>
           <div className="d-flex">
-            <div className="dropdown">
+            {/* <button
+              type="submit"
+              class="btn btn-sm btn-button rounded-5 sendMail"
+              style={{ padding: "0", width: "38px", height: "38px" }}
+            >
+              <span>
+                <IoIosSend className="fs-4" />
+              </span>
+            </button> */}
+            <SendEmail/>
+            <div className="dropdown mx-2">
               <button
                 className="btn btn-primary dropdown-toggle py-2"
                 type="button"
@@ -66,12 +77,6 @@ function CandidateView() {
               </ul>
             </div>
 
-            <button type="submit" class="btn mx-2 btn-sm btn-button rounded-5" style={{padding:'0',width:'38px',height:'38px'}}>
-              <span>
-                <IoIosSend className="fs-4"/>
-              </span>
-            </button>
-
             <div className="dropdown">
               <button
                 className="btn btn-primary dropdown-toggle py-2"
@@ -86,7 +91,7 @@ function CandidateView() {
                   <Review />
                 </li>
                 <li className="dropdown-item">
-                  Hiring Manager
+                 <SendEmailHiringManager/>
                 </li>
               </ul>
             </div>

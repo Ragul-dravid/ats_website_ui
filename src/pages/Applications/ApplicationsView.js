@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
-import { IoIosSend } from "react-icons/io";
+import SendEmail from "../Templates/SendEmail";
 function ApplicationsView() {
   return (
     <div className="container-fluid minHeight">
@@ -29,7 +29,19 @@ function ApplicationsView() {
       </div>
       <div className="card shadow border-0 mb-2">
         <div className="hstack gap-2 justify-content-end px-4 pt-4">
-          <div className="dropdown">
+        {/* <button
+            type="submit"
+            className="btn btn-sm btn-button rounded-5 sendMail"
+            style={{ padding: "0", width: "38px", height: "38px" }}
+          >
+            <span>
+              <IoIosSend className="fs-4" />
+            </span>
+          </button> */}
+
+          <SendEmail/>
+
+          <div className="dropdown mx-2">
             <button
               className="btn btn-primary dropdown-toggle py-2"
               type="button"
@@ -61,15 +73,7 @@ function ApplicationsView() {
               </li>
             </ul>
           </div>
-          <button
-            type="submit"
-            className="btn mx-2 btn-sm btn-button rounded-5"
-            style={{ padding: "0", width: "38px", height: "38px" }}
-          >
-            <span>
-              <IoIosSend className="fs-4" />
-            </span>
-          </button>
+         
           <button type="submit" className="btn btn-sm btn-button">
             <span>Submit To Hiring Manager</span>
           </button>

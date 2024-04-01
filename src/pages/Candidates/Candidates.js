@@ -4,7 +4,7 @@ import "datatables.net-responsive-dt";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { FaEye, FaEdit } from "react-icons/fa";
-import {  FaStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 import DeleteModel from "../../components/common/DeleteModel";
 import JobAssociate from "./JobAssociate";
 
@@ -18,7 +18,7 @@ const Candidates = () => {
       city: "Chennai  ",
       candidateStage: "Fresher",
       modifiedTime: "08:00",
-      rating: "4.0",
+      rating: "1",
     },
     {
       id: 2,
@@ -26,7 +26,31 @@ const Candidates = () => {
       city: "Chennai  ",
       candidateStage: "Fresher",
       modifiedTime: "08:00",
-      rating: "3.5",
+      rating: "2",
+    },
+    {
+      id: 3,
+      candidateName: "Chandru",
+      city: "Chennai  ",
+      candidateStage: "1 Experience",
+      modifiedTime: "09:00",
+      rating: "3",
+    },
+    {
+      id: 4,
+      candidateName: "Surya",
+      city: "Chennai  ",
+      candidateStage: "2 Experience",
+      modifiedTime: "09:00",
+      rating: "4",
+    },
+    {
+      id: 5,
+      candidateName: "Manoj",
+      city: "Chennai  ",
+      candidateStage: "5 Experience",
+      modifiedTime: "10:00",
+      rating: "5",
     },
   ];
 
@@ -69,13 +93,13 @@ const Candidates = () => {
                 <th scope="col" style={{ whiteSpace: "nowrap" }}>
                   S.NO
                 </th>
-                <th scope="col">
-                  CANDIDATE NAME
-                </th>
+                <th scope="col">CANDIDATE NAME</th>
                 <th scope="col">CITY</th>
                 <th scope="col">CANDIDATE STAGE</th>
                 <th scope="col">MODIFIED TIME</th>
-                <th className="text-start" scope="col">RATING</th>
+                <th className="text-start" scope="col">
+                  RATING
+                </th>
                 <th scope="col" className="text-center">
                   ACTION
                 </th>
@@ -85,14 +109,51 @@ const Candidates = () => {
               {datas.map((data, index) => (
                 <tr key={index}>
                   <td className="text-center">{index + 1}</td>
-                  <td >{data.candidateName}</td>
-                  <td >{data.city}</td>
-                  <td >{data.candidateStage}</td>
-                  <td >{data.modifiedTime}</td>
-                  <td className="text-start">{data.rating}<FaStar className="text-warning mb-1"/></td>
+                  <td>{data.candidateName}</td>
+                  <td>{data.city}</td>
+                  <td>{data.candidateStage}</td>
+                  <td>{data.modifiedTime}</td>
+                  <td className="text-start">
+        {data.rating === "5" ? (
+          <span
+            className="badge badge-bg-light text-dark border border-grey"
+            style={{ borderRadius: "10px" }}
+          >
+            5.0 <FaStar className="text-warning" />
+          </span>
+        ) : data.rating === "4" ? (
+          <span
+            className="badge badge-bg-light text-dark border border-grey"
+            style={{ borderRadius: "10px" }}
+          >
+            4.0 <FaStar className="text-warning" />
+          </span>
+        ) : data.rating === "3" ? (
+          <span
+            className="badge badge-bg-light text-dark border border-grey"
+            style={{ borderRadius: "10px" }}
+          >
+            3.0 <FaStar className="text-warning" />
+          </span>
+        ) : data.rating === "2" ? (
+          <span
+            className="badge badge-bg-light text-dark border border-grey"
+            style={{ borderRadius: "10px" }}
+          >
+            2.0 <FaStar className="text-warning" />
+          </span>
+        ) : (
+          <span
+            className="badge badge-bg-light text-dark border border-grey"
+            style={{ borderRadius: "10px" }}
+          >
+            1.0 <FaStar className="text-warning" />
+          </span>
+        )}
+      </td>
                   <td>
                     <div className="d-flex justify-content-around align-items-center">
-                      <JobAssociate/>
+                      <JobAssociate />
                       <Link to="/candidates/view">
                         <button className="btn btn-sm shadow-none border-none">
                           <FaEye />

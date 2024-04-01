@@ -21,14 +21,15 @@ function OfferAdd() {
 
   const formik = useFormik({
     initialValues: {
-      postingTitle: "",
-      departmentName: "",
-      candidateName: "",
-      compensationAmount: "",
-      employeeType: "",
-      expectedJoiningDate: "",
-      offerOwner: "",
-      expiryDate: "",
+      postingTitle: '',
+      departmentName: '',
+      candidateName: '',
+      compensationAmount: '',
+      employeeType: '',
+      expectedJoiningDate: '',
+      offerOwner: '',
+      expiryDate: '',
+      chooseOfferTemplate:''
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -66,31 +67,14 @@ function OfferAdd() {
                 type="submit"
                 className="btn btn-button mx-2"
               >
-                Save
+                Save & Send 
               </button>
-
-              <div className="dropdown">
-                  <button
-                    className="btn btn-primary dropdown-toggle py-2"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                      Choose Offer Template
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link className="dropdown-item" to="/offers/add">
-                        Offer of Employment
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/offers/add">
-                        Offer of Contract
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+              <button
+                type="submit"
+                className="btn btn-button mx-2"
+              >
+                Save 
+              </button>
             </div>
           </div>
 
@@ -175,6 +159,24 @@ function OfferAdd() {
                       {formik.errors.candidateName}
                     </div>
                   )}
+              </div>
+              <div className="col-md-6 col-12 mb-2">
+                <lable className="form-lable">
+                  Choose Offer Template
+                </lable>
+                <select
+                  name="chooseOfferTemplate"
+                  {...formik.getFieldProps("chooseOfferTemplate")}
+                  className={`form-select ${
+                    formik.touched.chooseOfferTemplate && formik.errors.chooseOfferTemplate
+                      ? "is-invalid"
+                      : ""
+                  }`}
+                >
+                  <option selected></option>
+                  <option value="Offer of Employment">Offer of Employment</option>
+                  <option value="Offer of Contract">Offer of Contract</option>
+                </select>
               </div>
             </div>
           </div>

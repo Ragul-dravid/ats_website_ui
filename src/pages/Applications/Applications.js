@@ -60,7 +60,7 @@ const Applications = () => {
                 </div>
             </div>
             <div className="card shadow border-0 my-2">
-                <div className="table-responsive p-2">
+                <div className="table-responsive p-2 minHeight">
                     <table
                         ref={tableRef}
                         className="display table table-hover table-nowrap"

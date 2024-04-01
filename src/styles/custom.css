@@ -184,7 +184,7 @@
 .btn-button.disabled {
   color: #fff;
   background-color: #57ACC6;
-  border-color: #006e8f;
+  border-color: #006e8fdc;
 }
 
 .btn-button-check:checked + .btn-button,
@@ -193,7 +193,7 @@
 .btn-button:first-child:active,
 :not(.btn-button-check) + .btn-button:active {
   background-color: #57ACC6;
-  border-color: #006e8f;
+  border-color: #006e8fdc;
   color: #fff;
 }
 
@@ -261,4 +261,22 @@ div.dt-container select.dt-input{
 
 .logutBtn :hover{
   color: #ffffff !important;
+}
+
+.sendMail:hover{
+  background: white;
+  color: #57ACC6;
+  border: 1px solid #48a6c2 !important;
+}
+
+.emailHeader{
+  width: 70% !important;
+}
+
+.emailHeader .offcanvas-header{
+  padding: 0px;
+  padding-left: 15px;
+  background-color: #57ACC6;
+  color: #fff;
+  border-bottom: 1px solid #424242;
 }

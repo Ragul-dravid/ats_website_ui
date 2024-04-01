@@ -13,7 +13,6 @@ function DepartmentEdit() {
     const validationSchema = Yup.object({
         departmentName: Yup.string().required("*Department Name is required"),
         departmentLead: Yup.string().required("*Department Lead is required"),
-        parentDepartment: Yup.string().required("*Parent Department is required"),
     });
     const formik = useFormik({
         initialValues: {
@@ -88,7 +87,7 @@ function DepartmentEdit() {
                                 </div>
                             </div>
                             <div className="col-md-6 col-12 mb-2">
-                                <lable className="form-lable">Parent Department<span className="text-danger">*</span></lable>
+                                <lable className="form-lable">Parent Department</lable>
                                 <div className="mb-3">
                                     <input
                                         type="text"
@@ -98,12 +97,6 @@ function DepartmentEdit() {
                                             }`}
                                         {...formik.getFieldProps("parentDepartment")}
                                     />
-                                    {formik.touched.parentDepartment &&
-                                        formik.errors.parentDepartment && (
-                                            <div className="invalid-feedback">
-                                                {formik.errors.parentDepartment}
-                                            </div>
-                                        )}
                                 </div>
                             </div>
                         </div>

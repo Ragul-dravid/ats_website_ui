@@ -26,7 +26,7 @@ function InterviewView() {
           </div>
         </div>
       </div>
-      <div className="card shadow border-0 mb-2">
+      <div className="card shadow border-0 mb-2 minHeight">
         <div className="container-fluid fw-bold fs-5 my-2">
           Formal Interview
         </div>
