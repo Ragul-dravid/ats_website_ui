@@ -4,10 +4,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { IoClose } from "react-icons/io5";
 import PreviewJobOpening from "./PreviewJobOpening";
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.snow.css';
 
 function JopOpeningEdit() {
   const [tags, setTags] = useState(["Java","React Js","Angular","Python"]);
   const [error, setError] = useState("");
+  const { quill, quillRef } = useQuill();
 
   const validationSchema = Yup.object({
     postingTitle: Yup.string().required("*Posting Title is required"),
@@ -39,7 +42,6 @@ function JopOpeningEdit() {
       state: "TamilNadu",
       country: "India",
       zip: "613001",
-      description: "React, sometimes referred to as a frontend JavaScript framework, is a JavaScript librarycreated by Facebook.React is a tool for building UI components",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -68,6 +70,17 @@ function JopOpeningEdit() {
     );
     setError("");
   };
+
+  React.useEffect(() => {
+    if (quill) {
+      quill.on('text-change', () => {
+        const html = quill.root.innerHTML;
+        formik.setFieldValue('description', html);
+      });
+      const delta = quill.clipboard.convert('<p><strong>React</strong>, sometimes referred to as a <em>frontend JavaScript framework</em>, is a JavaScript librarycreated by Facebook.<span style="color: red;"> React is a tool for building UI components</span></p>');
+      quill.setContents(delta);
+    }
+  }, [quill, formik]);
 
   return (
     <div className="container-fluid minHeight m-0">
@@ -234,7 +247,7 @@ function JopOpeningEdit() {
               </div>
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">
-                  Date Opend<span className="text-danger">*</span>
+                  Date Opened<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
                   <input  
@@ -359,8 +372,10 @@ function JopOpeningEdit() {
               <div className="col-md-12 col-12 mb-2">
                 <lable className="form-lable">Description</lable>
                 <div className="mb-3">
-                  <textarea type="text" rows={6} className="form-control " name="description" {...formik.getFieldProps("description")}/>
+                  <div ref={quillRef} style={{ height: "150px" }}
+                    {...formik.getFieldProps('description')} />
                 </div>
+                 {/* <textarea type="text" rows={6} className="form-control " name="description" {...formik.getFieldProps("description")}/> */}
               </div>
             </div>
           </div>
