@@ -162,7 +162,7 @@
   color: #fff;
   background-color: #57ACC6;
   border-color: #57ACC6;
-  box-shadow: 0 0 0 0.25rem #006e8f;
+  box-shadow: 0 0 0 0.25rem #57acc6a1;
 }
 .btn-check:checked + .btn-button,
 .btn-check:active + .btn-button,
@@ -178,7 +178,7 @@
 .btn-button:active:focus,
 .btn-button.active:focus,
 .show > .btn-button.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem #006e8f;
+  box-shadow: 0 0 0 0.25rem #57acc6a1;
 }
 .btn-button:disabled,
 .btn-button.disabled {
@@ -279,4 +279,26 @@ div.dt-container select.dt-input{
   background-color: #57ACC6;
   color: #fff;
   border-bottom: 1px solid #424242;
+}
+
+
+/* Required Skills */
+.tags-inp-container{
+  width: min(100vw ,100%);
+}
+
+.tag-item{
+  background-color: #57ACC6;
+  color: white;
+  display: inline-block;
+  padding: .2em .6em;
+  border-radius: 20px;
+}
+
+.tags-input 
+{
+  flex-grow: 1;
+  padding: .5em 0;
+  border: none !important;
+  outline: none !important;
 }

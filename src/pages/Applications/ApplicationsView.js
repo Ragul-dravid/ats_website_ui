@@ -27,7 +27,7 @@ function ApplicationsView() {
           </div>
         </div>
       </div>
-      <div className="card shadow border-0 mb-2">
+      <div className="card shadow border-0 mb-2 minHeight">
         <div className="hstack gap-2 justify-content-end px-4 pt-4">
         {/* <button
             type="submit"

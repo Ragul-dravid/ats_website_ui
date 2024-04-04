@@ -330,17 +330,15 @@ function CandidateView() {
         </div>
         <div className="container">
           <div className="row mt-2 p-3">
-            <div className="col-md-6 col-12">
+            <div className="col-md-12col-12">
               <div className="row mb-3">
-                <div className="col-6 d-flex justify-content-start align-items-center">
+                <div className="col-12">
                   <p className="text-sm">
                     <b>Resume</b>
                   </p>
                 </div>
-                <div className="col-6">
-                  <p className="text-muted text-sm">
-                    : resume_CV_2024_Ins_943{" "}
-                  </p>
+                <div className="col-12">
+                <embed width="100%" height="800px" src={process.env.PUBLIC_URL + "/ATS UI-1.pdf"} type="application/pdf"/>
                 </div>
               </div>
             </div>

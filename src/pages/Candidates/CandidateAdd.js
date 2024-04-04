@@ -336,7 +336,7 @@ function CandidateAdd() {
                 </div>
               </div>
               <div className="col-md-6 col-12 mb-2">
-                <label className="form-label">
+                <label className="form-label m-0">
                   Highest Qualification Held
                   <span className="text-danger">*</span>
                 </label>
@@ -364,7 +364,7 @@ function CandidateAdd() {
                   )}
               </div>
               <div className="col-md-6 col-12 mb-2">
-                <label className="form-label">
+                <label className="form-label m-0">
                   Current Job Title<span className="text-danger">*</span>
                 </label>
                 <select

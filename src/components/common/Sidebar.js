@@ -162,7 +162,7 @@ function Sidebar({ onLogout }) {
             </li>
           </ul>
 
-          <hr className="navbar-divider my-5 opacity-20" />
+          <div className="my-5 border-top-1" style={{border:'1px solid #87878761'}} />
 
           <div className="mt-auto logutBtn">
             <button className="nav-link ps-6" to={"#"}>

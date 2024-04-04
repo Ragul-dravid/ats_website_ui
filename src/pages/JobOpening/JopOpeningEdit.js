@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { IoClose } from "react-icons/io5";
+import PreviewJobOpening from "./PreviewJobOpening";
 
 function JopOpeningEdit() {
+  const [tags, setTags] = useState(["Java","React Js","Angular","Python"]);
+  const [error, setError] = useState("");
+
   const validationSchema = Yup.object({
     postingTitle: Yup.string().required("*Posting Title is required"),
     departmentName: Yup.string().required("*Department Name is required"),
     workExperience: Yup.string().required("*Work Experience is required"),
     targetDate: Yup.string().required("*Target Date is required"),
     dateOpend: Yup.string().required("*Date Opend is required"),
-    requiredSkills: Yup.string().required("*Required Skills is required"),
+    requiredSkills: Yup.array()
+    .required("*Required Skills is required")
+    .max(10, "Only 10 tags are allowed"),
   });
 
   const formik = useFormik({
@@ -27,7 +34,7 @@ function JopOpeningEdit() {
       salary: "20000",
       jobOpeningStatus: "In Progress",
       industry: "Education",
-      requiredSkills: "Ajax , Node Js ,Java , Reactjs",
+      requiredSkills: [],
       city: "Thanjavur",
       state: "TamilNadu",
       country: "India",
@@ -39,6 +46,28 @@ function JopOpeningEdit() {
       console.log("Job Opening Datas:", values);
     },
   });
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const value = e.target.value.trim();
+      if (value && tags.length < 10 && !tags.includes(value)) {
+        setTags([...tags, value]);
+        formik.setFieldValue("requiredSkills", [...tags, value]);
+        setError("");
+      }
+      e.target.value = "";
+    }
+  };
+
+  const removeTag = (index) => {
+    setTags(tags.filter((_, i) => i !== index));
+    formik.setFieldValue(
+      "requiredSkills",
+      tags.filter((_, i) => i !== index)
+    );
+    setError("");
+  };
 
   return (
     <div className="container-fluid minHeight m-0">
@@ -67,6 +96,7 @@ function JopOpeningEdit() {
         <div className="card shadow border-0 my-2">
           <div className="row mt-3 me-2">
             <div className="col-12 text-end">
+              <PreviewJobOpening/>
               <button type="submit" className="btn btn-button mx-2">
                 Save & Publish
               </button>
@@ -261,20 +291,39 @@ function JopOpeningEdit() {
                 <lable className="form-lable">
                   Required Skills<span className="text-danger">*</span>
                 </lable>
-                <div className="mb-3">
-                  <textarea type="text" rows={5} name="requiredSkills" className={`form-control  ${
-                        formik.touched.requiredSkills && formik.errors.requiredSkills
-                          ? "is-invalid"
-                          : ""
-                      }`}
-                      {...formik.getFieldProps("requiredSkills")} />
-                      {formik.touched.requiredSkills &&
-                    formik.errors.requiredSkills && (
-                      <div className="invalid-feedback">
-                        {formik.errors.requiredSkills}
-                      </div>
-                    )}
+                <div className="tags-inp-container border-1 rounded-2 p-2">
+                  {tags.map((tags, index) => (
+                    <div className="tag-item my-2 mx-1 ">
+                      <label className="text">
+                        {tags}{" "}
+                        <span
+                          className="close p-1 rounded-5 "
+                          onClick={() => removeTag(index)}
+                        >
+                          <IoClose
+                            className="fs-6 mb-1 bg-white rounded-5"
+                            style={{ color: "#57ACC6" }}
+                          />
+                        </span>
+                      </label>
+                    </div>
+                  ))}
+                  {tags.length < 10 && (
+                    <input
+                      type="text"
+                      onKeyDown={handleKeyDown}
+                      name="requiredSkills"
+                      className="form-control shadow-none p-2 tags-input"
+                      placeholder="Add Skills"
+                    />
+                  )}
                 </div>
+                {formik.touched.requiredSkills &&
+                  formik.errors.requiredSkills && (
+                    <div className="invalid-feedback">
+                      {formik.errors.requiredSkills}
+                    </div>
+                  )}
               </div>
             </div>
           </div>
