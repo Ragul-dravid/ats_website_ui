@@ -42,6 +42,7 @@ function JopOpeningEdit() {
       state: "TamilNadu",
       country: "India",
       zip: "613001",
+      description:""
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -71,16 +72,16 @@ function JopOpeningEdit() {
     setError("");
   };
 
-  React.useEffect(() => {
-    if (quill) {
-      quill.on('text-change', () => {
-        const html = quill.root.innerHTML;
-        formik.setFieldValue('description', html);
-      });
-      const delta = quill.clipboard.convert('<p><strong>React</strong>, sometimes referred to as a <em>frontend JavaScript framework</em>, is a JavaScript librarycreated by Facebook.<span style="color: red;"> React is a tool for building UI components</span></p>');
-      quill.setContents(delta);
-    }
-  }, [quill, formik]);
+  // React.useEffect(() => {
+  //   if (quill) {
+  //     quill.on('text-change', () => {
+  //       const html = quill.root.innerHTML;
+  //       formik.setFieldValue('description', html);
+  //     });
+  //     const delta = quill.clipboard.convert('<p><strong>React</strong>, sometimes referred to as a <em>frontend JavaScript framework</em>, is a JavaScript librarycreated by Facebook.<span style="color: red;"> React is a tool for building UI components</span></p>');
+  //     quill.setContents(delta);
+  //   }
+  // }, [quill, formik]);
 
   return (
     <div className="container-fluid minHeight m-0">
